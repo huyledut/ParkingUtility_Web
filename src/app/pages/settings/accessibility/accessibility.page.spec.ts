@@ -8,8 +8,9 @@ describe('AccessibilityPage', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AccessibilityPage],
-    }).compileComponents();
+      imports: [ AccessibilityPage ]
+    })
+    .compileComponents();
 
     fixture = TestBed.createComponent(AccessibilityPage);
     component = fixture.componentInstance;
