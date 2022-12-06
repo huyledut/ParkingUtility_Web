@@ -2,11 +2,12 @@ import {
   HttpEvent,
   HttpHandler,
   HttpInterceptor,
-  HttpRequest,
+  HttpRequest
 } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '@env/environment';
 import { Observable } from 'rxjs';
+import { storage } from '../utils';
 
 @Injectable()
 export class JwtInterceptor implements HttpInterceptor {
@@ -15,8 +16,9 @@ export class JwtInterceptor implements HttpInterceptor {
     next: HttpHandler,
   ): Observable<HttpEvent<unknown>> {
     const isLoggedIn = true;
-    const token = 'ABC';
+    const token = storage.getItem('App/session')?.token;
     const isApiUrl = request.url.startsWith(environment.apiUrl);
+
 
     if (isLoggedIn && isApiUrl) {
       request = request.clone({
