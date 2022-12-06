@@ -13,7 +13,7 @@ export class AuthService {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
   };
 
-  baseUrl = 'http://188.166.182.205:5000/api/';
+  baseUrl = 'https://dutps.herokuapp.com/api/';
   apiUrl = this.baseUrl + 'Auth/Login';
 
   isLoggedIn$ = new BehaviorSubject<boolean>(!!storage.getItem('App/session'));
