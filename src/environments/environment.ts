@@ -4,7 +4,7 @@
 
 export const environment = {
   production: true,
-  apiUrl: 'https://dutps.herokuapp.com/api',
+  apiUrl: 'http://188.166.182.205:5000/api',
 };
 
 /*

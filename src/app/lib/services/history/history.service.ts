@@ -13,7 +13,7 @@ export class HistoryService {
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
   };
-  baseUrl = 'https://dutps.herokuapp.com/api/';
+  baseUrl = 'http://188.166.182.205:5000/api/';
   apiUrl = this.baseUrl + 'CheckIns/History';
 
   getHistory(query: HistoryQuery): Observable<History> {
